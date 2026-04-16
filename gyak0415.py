@@ -8,13 +8,14 @@ class Diak:
 
 # Fájl beolvasása
 diakok = []
-with open('diak.txt', 'r', encoding='utf-8') as f:
-    for line in f:
-        parts = line.strip().split(';')
-        if len(parts) == 3:
-            nev, osztaly, atlag_str = parts
-            diak = Diak(nev.strip(), osztaly.strip(), atlag_str.strip())
-            diakok.append(diak)
+f= open('diak.txt', 'r', encoding='utf-8')
+for line in f:
+    parts = line.strip().split(';')
+    if len(parts) == 3:
+        nev, osztaly, atlag_str = parts
+        diak = Diak(nev.strip(), osztaly.strip(), atlag_str.strip())
+        diakok.append(diak)
+f.close()
 
 # 1. Hány fős a csoport?
 print("A csoport", len(diakok), "fős.")
